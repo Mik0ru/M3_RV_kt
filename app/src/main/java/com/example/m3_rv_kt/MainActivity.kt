@@ -14,9 +14,9 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportFragmentManager.beginTransaction()
-            .add(R.id.fragment_container_view_main, RecyclerViewFragment())
-            .commit()
+       // supportFragmentManager.beginTransaction()
+       //     .add(R.id.fragment_container_view_main, RecyclerViewFragment())
+    //       .commit()
 
     }
 }

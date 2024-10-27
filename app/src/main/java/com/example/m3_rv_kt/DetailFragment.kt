@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.example.m3_rv_kt.databinding.FragmentDetailBinding
 
-@Suppress( "DEPRECATION")
 class DetailFragment : Fragment() {
     private lateinit var binding: FragmentDetailBinding
 
@@ -28,6 +27,7 @@ class DetailFragment : Fragment() {
         binding.apply {
             Glide.with(buttonWa).load("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png").into(buttonWa)
             val car = requireArguments().getSerializable("car") as Car
+            //val car = DetailFragmentArgs.fromBundle(requireArguments()) as Car
             textViewDesc.text = car.desc
             textViewBrand.text = car.brand
             textViewCost.text = car.cost

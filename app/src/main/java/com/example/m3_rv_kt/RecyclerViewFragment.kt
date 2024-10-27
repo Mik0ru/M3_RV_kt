@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.m3_rv_kt.databinding.FragmentRecyclerViewBinding
 
 class RecyclerViewFragment : Fragment() {
@@ -31,9 +32,11 @@ class RecyclerViewFragment : Fragment() {
             val bundle = Bundle().apply {
                 putSerializable("car", carList[position])
             }
-            val detailFragment = DetailFragment()
-            detailFragment.arguments = bundle
-            requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view_main, detailFragment).addToBackStack(null).commit()
+           // val detailFragment = DetailFragment()
+          //  detailFragment.arguments = bundle
+            //requireActivity().supportFragmentManager.beginTransaction().replace(R.id.fragment_container_view_main, detailFragment).addToBackStack(null).commit()
+           // val action = RecyclerViewFragmentDirections.actionRecyclerViewFragmentToDetailFragment(carList[position])
+            findNavController().navigate(R.id.action_recyclerViewFragment_to_detailFragment,bundle)
         }
         binding.recyclerViewCars.adapter = adapter
     }
